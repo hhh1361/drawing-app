@@ -8,7 +8,16 @@ import * as serviceWorker from './serviceWorker'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const initialState = {
-  canvas: [],
+  canvas: [
+    [[], [], ['x'], [], [], [], [], []],
+    [[], [], [], [], [], [], [], []],
+    [[], [], [], [], [], [], [], []],
+    [[], [], ['x'], [], [], [], [], []],
+    [[], [], [], [], [], [], [], []],
+    [[], [], [], [], [], [], [], []],
+    [[], [], ['x'], [], [], [], [], []],
+    [[], [], [], [], [], [], [], []],
+  ],
   commands: [
     { description: 'a', date: 1 },
     { description: 'b', date: 2 },

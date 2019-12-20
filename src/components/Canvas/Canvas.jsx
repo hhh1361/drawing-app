@@ -3,34 +3,32 @@ import { connect } from 'react-redux'
 import Cell from './Cell/Cell'
 
 function Canvas(props) {
-  const { w, h, x1, y1, x2, y2, c } = props
-  const array = [
-    [[], [], [], [], [], [], [], []],
-    [[], [], [], [], [], [], [], []],
-    [[], [], [], [], [], [], [], []],
-    [[], [], [], [], [], [], [], []],
-    [[], [], [], [], [], [], [], []],
-    [[], [], [], [], [], [], [], []],
-    [[], [], [], [], [], [], [], []],
-    [[], [], [], [], [], [], [], []],
-  ]
+  const { canvas } = props
+
   return (
-    <div>
-      {array.map(e => (
-        <div className="row">
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              width: `${20 * array.length}px`,
-            }}
-          >
-            {e.map(() => (
-              <Cell />
-            ))}
+    <div className="canvas">
+      <div
+        className="vertical-wrapper"
+        style={{
+          width: `${20 * canvas.length}px`,
+        }}
+      >
+        {canvas.map(i => (
+          <div className="row" key={`r${canvas.indexOf(i)}`}>
+            <div
+              className="horizontal-wrapper"
+              key={`r${i}`}
+              style={{
+                width: `${20 * i.length}px`,
+              }}
+            >
+              {i.map(j => (
+                <Cell text={j} key={`r${canvas.indexOf(i)}c${i.indexOf(j)}`} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }
@@ -38,7 +36,7 @@ function Canvas(props) {
 export default connect(
   state => {
     return {
-      stage: state.stage,
+      canvas: state.canvas,
     }
   },
   dispatch => ({
