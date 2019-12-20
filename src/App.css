@@ -1,8 +1,38 @@
+#root {
+  background: #1D1D1D;
+}
 .container-fluid {
   display: flex;
-  flex-direction: column;
-  width: 1000px;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
+}
+.right-section, .left-section {
+  height: 500px;
+}
+@media (max-width: 768px) {
+  .container-fluid {
+    flex-direction: column;
+  }
+}
+.container-fluid div {
+  border: 1px solid red;
+}
+.command span {
+  color: white;
+}
+.command span {
+  color: white;
 }
 input {
   box-shadow: none !important;
+}
+.left-section .row {
+  margin: 0px;
+  justify-content: center;
+}
+.cell {
+  width: 20px;
+  height: 20px;
 }

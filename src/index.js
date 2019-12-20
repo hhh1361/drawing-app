@@ -8,17 +8,12 @@ import * as serviceWorker from './serviceWorker'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const initialState = {
-  information: {
-    input: { email: '', name: '', surname: '', company: '' },
-    select: { gender: '', timezone: '' },
-  },
-  stage: 'email',
-  email: '',
-  name: '',
-  surname: '',
-  gender: '',
-  company: '',
-  timezone: '',
+  canvas: [],
+  commands: [
+    { description: 'a', date: 1 },
+    { description: 'b', date: 2 },
+    { description: 'c', date: 3 },
+  ],
 }
 
 function information(state = initialState, action) {
@@ -28,13 +23,16 @@ function information(state = initialState, action) {
         ...state,
         stage: action.payload,
       }
-    case 'ADD_EMAIL':
+    case 'ADD_COMMAND':
       return {
         ...state,
-        information: {
-          ...state.information,
-          input: { ...state.information.input, email: action.payload },
-        },
+        commands: [
+          ...state.commands,
+          {
+            description: action.payload.description,
+            date: action.payload.date,
+          },
+        ],
       }
     case 'ADD_NAME':
       return {
