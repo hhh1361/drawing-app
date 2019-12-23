@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export default function Cell(props) {
-  const { text } = props
+  const { text } = props;
   return (
     <div className="cell">
-      <span>{text[0] ? text[0].toUpperCase() : null}</span>
+      {text ? <span>{text}</span> : <span />}
+      {/* <span>{text || null}</span> */}
     </div>
-  )
+  );
 }
