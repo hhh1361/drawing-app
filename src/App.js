@@ -9,6 +9,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 function App(props) {
   return (
     <>
+      <div className="header col-12">
+        <h1>Drawing app</h1>
+      </div>
+
       <div className="container-fluid align-items-center col-lg-11 col-xl-10">
         <div className="left-section">
           <Canvas />

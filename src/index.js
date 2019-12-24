@@ -8,17 +8,8 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialState = {
-  canvas: [
-    [{}, {}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, { color: 'X' }, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}, {}],
-  ],
-  commands: [
-    { description: 'a', date: 1 },
-    { description: 'b', date: 2 },
-    { description: 'c', date: 3 },
-  ],
+  canvas: [],
+  commands: [],
 };
 
 function information(state = initialState, action) {
@@ -39,38 +30,7 @@ function information(state = initialState, action) {
         ...state,
         canvas: [...action.payload],
       };
-    case 'ADD_SURNAME':
-      return {
-        ...state,
-        information: {
-          ...state.information,
-          input: { ...state.information.input, surname: action.payload },
-        },
-      };
-    case 'ADD_GENDER':
-      return {
-        ...state,
-        information: {
-          ...state.information,
-          select: { ...state.information.select, gender: action.payload },
-        },
-      };
-    case 'ADD_COMPANY':
-      return {
-        ...state,
-        information: {
-          ...state.information,
-          input: { ...state.information.input, company: action.payload },
-        },
-      };
-    case 'ADD_TIMEZONE':
-      return {
-        ...state,
-        information: {
-          ...state.information,
-          select: { ...state.information.select, timezone: action.payload },
-        },
-      };
+
     default:
       return state;
   }

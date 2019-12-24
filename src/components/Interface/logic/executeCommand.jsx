@@ -2,6 +2,7 @@ import $ from 'jquery';
 import canvasCreate from './instruments/canvasCreate';
 import line from './instruments/line';
 import rectangle from './instruments/rectangle';
+import bucket from './instruments/bucket';
 
 export default function commandCheck(string, array) {
   const command = string.split(' ');
@@ -29,15 +30,16 @@ export default function commandCheck(string, array) {
       return false;
 
     case 'B':
-      return !!(
-        command[1] <= array[0].length &&
-        command[2] <= array.length &&
-        command[1] >= 0 &&
-        command[2] >= 0 &&
-        /\w+/.exec(command[3]) &&
-        command.length === 4
-      );
+      if (command.length === 4) {
+        return bucket(array, command[1] - 1, command[2] - 1, command[3]);
+      }
+      $('#basic').modal('show');
+      return false;
     default:
+      if (array.length === 0) {
+        $('#welcome').modal('show');
+        return false;
+      }
       $('#basic').modal('show');
       return false;
   }
