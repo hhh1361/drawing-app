@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/drawing-app/static/css/main.475fde8b.chunk.css",
+    "main.js": "/drawing-app/static/js/main.25590436.chunk.js",
+    "main.js.map": "/drawing-app/static/js/main.25590436.chunk.js.map",
+    "runtime-main.js": "/drawing-app/static/js/runtime-main.032b0828.js",
+    "runtime-main.js.map": "/drawing-app/static/js/runtime-main.032b0828.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/drawing-app/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.0f0e9112.chunk.js": "/drawing-app/static/js/2.0f0e9112.chunk.js",
+    "static/js/2.0f0e9112.chunk.js.map": "/drawing-app/static/js/2.0f0e9112.chunk.js.map",
+    "index.html": "/drawing-app/index.html",
+    "precache-manifest.3bb8ede5dc73fccea28687bf278e232c.js": "/drawing-app/precache-manifest.3bb8ede5dc73fccea28687bf278e232c.js",
+    "service-worker.js": "/drawing-app/service-worker.js",
+    "static/css/2.17e5ed98.chunk.css.map": "/drawing-app/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.475fde8b.chunk.css.map": "/drawing-app/static/css/main.475fde8b.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.032b0828.js",
+    "static/css/2.17e5ed98.chunk.css",
+    "static/js/2.0f0e9112.chunk.js",
+    "static/css/main.475fde8b.chunk.css",
+    "static/js/main.25590436.chunk.js"
+  ]
+}
