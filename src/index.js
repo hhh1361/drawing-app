@@ -1,42 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { store } from './store/configurateStore';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const initialState = {
-  canvas: [],
-  commands: [],
-};
-
-function information(state = initialState, action) {
-  switch (action.type) {
-    case 'ADD_COMMAND':
-      return {
-        ...state,
-        commands: [
-          ...state.commands,
-          {
-            description: action.payload.description,
-            date: action.payload.date,
-          },
-        ],
-      };
-    case 'UPDATE_CANVAS':
-      return {
-        ...state,
-        canvas: [...action.payload],
-      };
-
-    default:
-      return state;
-  }
-}
-
-const store = createStore(information);
 store.subscribe(() => {});
 
 ReactDOM.render(

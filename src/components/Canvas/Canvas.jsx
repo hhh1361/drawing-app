@@ -4,7 +4,6 @@ import Cell from './cell/Cell';
 
 function Canvas(props) {
   const { canvas } = props;
-
   return (
     <div className="canvas">
       <div
@@ -38,15 +37,10 @@ function Canvas(props) {
   );
 }
 
-export default connect(
-  state => {
-    return {
-      canvas: state.canvas,
-    };
-  },
-  dispatch => ({
-    onNextStep: () => {
-      dispatch({ type: 'CHANGE_STAGE', payload: 'completed' });
-    },
-  }),
-)(Canvas);
+const mapStateToProps = state => {
+  return {
+    canvas: state.canvas,
+  };
+};
+
+export default connect(mapStateToProps)(Canvas);

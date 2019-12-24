@@ -85,23 +85,24 @@ function Interface(props) {
   );
 }
 
-export default connect(
-  state => {
-    return {
-      commands: state.commands,
-      canvas: state.canvas,
-    };
+const mapStateToProps = state => {
+  return {
+    commands: state.commands,
+    canvas: state.canvas,
+  };
+};
+
+const mapsDispatchToProps = dispatch => ({
+  onSubmit: (description, date, canvas) => {
+    dispatch({
+      type: 'ADD_COMMAND',
+      payload: { description, date },
+    });
+    dispatch({
+      type: 'UPDATE_CANVAS',
+      payload: canvas,
+    });
   },
-  dispatch => ({
-    onSubmit: (description, date, canvas) => {
-      dispatch({
-        type: 'ADD_COMMAND',
-        payload: { description, date },
-      });
-      dispatch({
-        type: 'UPDATE_CANVAS',
-        payload: canvas,
-      });
-    },
-  }),
-)(Interface);
+});
+
+export default connect(mapStateToProps, mapsDispatchToProps)(Interface);
