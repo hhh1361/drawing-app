@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Canvas from './components/canvas/Canvas';
 import Interface from './components/interface/Interface';
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -25,9 +25,10 @@ function App(props) {
   );
 }
 
-export default connect(state => {
+const mapStateToProps = state => {
   return {
     stage: state.stage,
     information: state.information,
   };
-})(App);
+};
+export default connect(mapStateToProps)(App);

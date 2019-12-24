@@ -1,0 +1,134 @@
+#root {
+  background: #1D1D1D;
+
+  .header {
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    color: gray;
+  }
+
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 85vh;
+    width: 100vw;
+
+    .left-section {
+      height: 500px;
+      border: 1px solid #222;;
+
+      .canvas {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        height: 100%;
+        width: 500px;
+        margin: 0px;   
+        
+        .vertical-wrapper {
+          display: flex;
+          flex-direction: column;
+          background-color: #222;
+
+          .row {
+            margin: 0px;
+            justify-content: center;
+
+            .horizontal-wrapper {
+              display: flex;
+              flex-direction: row;
+
+              .cell {
+                width: 20px;
+                height: 20px;
+                line-height: 18px;
+                text-align: center;
+                border: 1px solid #1D1D1D;
+                color: rgb(170, 170, 170);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right-section {
+      height: 500px;
+      border: 1px solid #222;;
+
+      .action-panel {
+        margin: 20px 20px 0 20px;
+
+        input {
+          color: rgb(185, 185, 185);
+          box-shadow: none !important;
+          border: 0px;
+          margin-bottom: 5px;
+          background-color: rgba(136, 136, 136, 0.048);
+        }
+
+        .previous-commands {
+          height: 435px;
+          padding: 0px;
+          overflow:hidden; 
+          overflow-y:scroll;
+          margin-bottom: 0;
+          background: #1D1D1D;
+
+          .command {
+            .date {
+              margin: 5px 15px;
+              color: rgb(73, 73, 73);
+            }
+            span {
+              color: rgb(158, 158, 158);
+            }
+          } 
+        }
+        ::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 10px;
+          background-color: #222;
+        }       
+        ::-webkit-scrollbar {
+          width: 12px;
+          background-color: #1D1D1D;
+        }
+        ::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: #1D1D1D;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  #root {
+    width: 502px;
+    height: 100%;
+
+    .container-fluid {
+      flex-direction: column;
+      width: 502px !important;
+      padding: 0px !important;
+      height: 100%;
+
+      .left-section{
+        padding: 0px;
+        width: 100%;
+      }
+      .right-section{
+        width: 100%;
+
+        input{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

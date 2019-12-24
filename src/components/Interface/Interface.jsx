@@ -37,8 +37,13 @@ function Interface(props) {
         {[]
           .concat(commands)
           .reverse()
-          .map(e => (
-            <Command text={e.description} date={e.date} key={e.date} />
+          .map((e, index) => (
+            <Command
+              text={e.description}
+              date={e.date}
+              // eslint-disable-next-line react/no-array-index-key
+              key={`${e.date} ${index}`}
+            />
           ))}
       </ul>
       <Error
