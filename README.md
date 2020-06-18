@@ -1,9 +1,19 @@
- Ссылка для запуска приложения:
- https://hhh1361.github.io/drawing-app/
+ # Youtube Player  
+Link:  
+https://hhh1361.github.io/drawing-app/
+---
+
+### Technologies:  
+JS, React, Redux, Bootstrap.
+
+---
+### Description:  
+Application to drow with text commands.
+
  ---
 
-Условия задания: 
- 1.	Задачу необходимо решить на JavaScript.  
+Условие: 
+1.	Задачу необходимо решить на JavaScript.  
 2.	Ваш код JavaScript должен соответствовать требованиям последней спецификации ES2018 
 3.	Применение React или Vue категорически приветствуется! 
 4.	Поле для рисования должно быть выполнено в виде HTML-страницы (располагайте HTML элементы в соответствии с логикой вашего приложения), не используйте элемент <canvas> и его API 
